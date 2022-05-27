@@ -1,4 +1,5 @@
 import java.lang.*;
+import java.util.ArrayList;
 
 public class Runner {
 
@@ -7,126 +8,59 @@ public class Runner {
         double start, end, millisecondsSum;
         String method;
 
-        int warmupRounds = 5;
-        int testRounds = 10;
-        int matrixSize = 200;
-
-        ArrayFactory arrayFactory = new ArrayFactory(matrixSize);
+        int warmupRounds = 1;
+        int testRounds = 1;
+        int[] matrixSizes = {1000, 2000, 5000, 10000, 20000, 50000, 100000, 1000000};
 
 
-        // EJML
-        method = "EJML";
-        millisecondsSum = 0;
-        System.out.println("Start testing with method: " + method + "...");
-        for (int i = 0; i < warmupRounds; i++) {    // Warmup
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkEJML(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
 
-            System.out.println("Warmup round " + (i+1) + "/" + warmupRounds + " took " + getMilliseconds(start, end) + "ms.");
+        ArrayList<BenchmarkSuperclass> benchmarksList = new ArrayList<BenchmarkSuperclass>();
+        benchmarksList.add(new BenchmarkND4J());
+        benchmarksList.add(new BenchmarkEJML());
+        benchmarksList.add(new BenchmarkLA4J());
+        benchmarksList.add(new BenchmarkApacheCommons());
+        benchmarksList.add(new BenchmarkColt());
+
+        for (int matrixSize: matrixSizes) {
+            ArrayFactory arrayFactory = new ArrayFactory(matrixSize);
+            System.out.println("RUNNING BENCHMARKS FOR MATRICES OF SIZE: " + matrixSize);
+            System.out.println("");
+            for (BenchmarkSuperclass benchmark : benchmarksList) {
+                millisecondsSum = 0;
+                method = benchmark.getMethodName();
+                System.out.println("Start testing with method: " + method);
+                System.out.print("Running " + warmupRounds + " warmups ");
+                for (int i = 0; i < warmupRounds; i++) {    // Warmup
+                    System.out.print(".");
+                    benchmark.setMatrices(arrayFactory.getNewArray(), arrayFactory.getNewArray());
+                    benchmark.multiplyMatrices();
+                }
+                System.out.println("");
+                System.out.print("Benchmarking for " + testRounds + " rounds ");
+                for (int i = 0; i < testRounds; i++) {    // Benchmark
+                    if (i % 20 == 0) {
+                        System.out.println("");
+                    } else if (i % 5 == 0) {
+                        System.out.print(" ");
+                    }
+                    System.out.print(".");
+                    benchmark.setMatrices(arrayFactory.getNewArray(), arrayFactory.getNewArray());
+                    start = System.nanoTime();
+                    benchmark.multiplyMatrices();
+                    end = System.nanoTime();
+
+                    millisecondsSum += getMilliseconds(start, end);
+                }
+                System.out.println("");
+                System.out.println("Average time taken per matrix with matrix size: " + matrixSize);
+                System.out.println(" and method \"" + method + "\": " +
+                        millisecondsSum / testRounds + "ms.");
+                System.out.println("========== " + millisecondsSum / testRounds + " ==========");
+                System.out.println("");
+            }
+            System.out.println("===============================================================");
+            System.out.println("");
         }
-        for (int i = 0; i < testRounds; i++) {    // Benchmark
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkEJML(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
-
-            System.out.println("Benchmark round " + (i+1) + "/" + testRounds + " took " + getMilliseconds(start, end) + "ms.");
-            millisecondsSum += getMilliseconds(start, end);
-        }
-        System.out.println("Average time taken per matrix with method (" + method + "): " + millisecondsSum / testRounds);
-        System.out.println("");
-
-
-        // ND4J
-        method = "ND4J";
-        millisecondsSum = 0;
-        System.out.println("Start testing with method: " + method + "...");
-        for (int i = 0; i < warmupRounds; i++) {    // Warmup
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkND4J(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
-
-            System.out.println("Warmup round " + (i+1) + "/" + warmupRounds + " took " + getMilliseconds(start, end) + "ms.");
-        }
-        for (int i = 0; i < testRounds; i++) {    // Benchmark
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkND4J(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
-
-            System.out.println("Benchmark round " + (i+1) + "/" + testRounds + " took " + getMilliseconds(start, end) + "ms.");
-            millisecondsSum += getMilliseconds(start, end);
-        }
-        System.out.println("Average time taken per matrix with method (" + method + "): " + millisecondsSum / testRounds);
-        System.out.println("");
-
-
-        // LA4J
-        method = "LA4J";
-        millisecondsSum = 0;
-        System.out.println("Start testing with method: " + method + "...");
-        for (int i = 0; i < warmupRounds; i++) {    // Warmup
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkLA4J(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
-
-            System.out.println("Warmup round " + (i+1) + "/" + warmupRounds + " took " + getMilliseconds(start, end) + "ms.");
-        }
-        for (int i = 0; i < testRounds; i++) {    // Benchmark
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkLA4J(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
-
-            System.out.println("Benchmark round " + (i+1) + "/" + testRounds + " took " + getMilliseconds(start, end) + "ms.");
-            millisecondsSum += getMilliseconds(start, end);
-        }
-        System.out.println("Average time taken per matrix with method (" + method + "): " + millisecondsSum / testRounds);
-        System.out.println("");
-
-
-        // Apache commons
-        method = "Apache Commons";
-        millisecondsSum = 0;
-        System.out.println("Start testing with method: " + method + "...");
-        for (int i = 0; i < warmupRounds; i++) {    // Warmup
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkApacheCommons(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
-
-            System.out.println("Warmup round " + (i+1) + "/" + warmupRounds + " took " + getMilliseconds(start, end) + "ms.");
-        }
-        for (int i = 0; i < testRounds; i++) {    // Benchmark
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkApacheCommons(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
-
-            System.out.println("Benchmark round " + (i+1) + "/" + testRounds + " took " + getMilliseconds(start, end) + "ms.");
-            millisecondsSum += getMilliseconds(start, end);
-        }
-        System.out.println("Average time taken per matrix with method (" + method + "): " + millisecondsSum / testRounds);
-        System.out.println("");
-
-
-        // Colt
-        method = "Colt";
-        millisecondsSum = 0;
-        System.out.println("Start testing with method: " + method + "...");
-        for (int i = 0; i < warmupRounds; i++) {    // Warmup
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkColt(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
-
-            System.out.println("Warmup round " + (i+1) + "/" + warmupRounds + " took " + getMilliseconds(start, end) + "ms.");
-        }
-        for (int i = 0; i < testRounds; i++) {    // Benchmark
-            start = System.nanoTime();
-            MatrixMultiplicationBenchmarks.benchmarkColt(arrayFactory.getNewArray(), arrayFactory.getNewArray());
-            end = System.nanoTime();
-
-            System.out.println("Benchmark round " + (i+1) + "/" + testRounds + " took " + getMilliseconds(start, end) + "ms.");
-            millisecondsSum += getMilliseconds(start, end);
-        }
-        System.out.println("Average time taken per matrix with method (" + method + "): " + millisecondsSum / testRounds);
-        System.out.println("");
 
     }
 

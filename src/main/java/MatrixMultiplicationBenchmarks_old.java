@@ -9,7 +9,7 @@ import org.nd4j.linalg.factory.Nd4j;
 
 import static org.apache.commons.math3.linear.MatrixUtils.createRealMatrix;
 
-public class MatrixMultiplicationBenchmarks {
+public class MatrixMultiplicationBenchmarks_old {
 
     public static SimpleMatrix benchmarkEJML(double[][] firstArray, double[][] secondArray) {
         SimpleMatrix firstMatrix = new SimpleMatrix(firstArray);
