@@ -1,0 +1,37 @@
+> Task :run
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 8000
+
+Start testing with method: ND4J
+Running 2 warmups .SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+.
+Benchmarking for 4 rounds
+....
+Average time taken per matrix with matrix size: 8000
+ and method "ND4J": 180.493225ms.
+========== 180.493225 ==========
+
+Start testing with method: EJML
+Running 2 warmups ..
+Benchmarking for 4 rounds
+....
+Average time taken per matrix with matrix size: 8000
+ and method "EJML": 143952.382675ms.
+========== 143952.382675 ==========
+
+Start testing with method: LA4J
+Running 2 warmups ..
+Benchmarking for 4 rounds
+....
+Average time taken per matrix with matrix size: 8000
+ and method "LA4J": 560090.757675ms.
+========== 560090.757675 ==========
+
+Start testing with method: Apache Commons
+Running 2 warmups ..
+Benchmarking for 4 rounds
+....
+Average time taken per matrix with matrix size: 8000
+ and method "Apache Commons": 429316.718925ms.
+========== 429316.718925 ==========

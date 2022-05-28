@@ -1,0 +1,410 @@
+00:52:46: Executing 'run'...
+
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+
+> Task :run
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 10
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 10
+ and method "ND4J": 0.26389000000000007ms.
+========== 0.26389000000000007 ==========
+
+Start testing with method: EJML
+Running 5 warmups .SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 10
+ and method "EJML": 0.13283ms.
+========== 0.13283 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 10
+ and method "LA4J": 0.12742ms.
+========== 0.12742 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 10
+ and method "Apache Commons": 0.15095999999999998ms.
+========== 0.15095999999999998 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 100
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 100
+ and method "ND4J": 0.37402ms.
+========== 0.37402 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 100
+ and method "EJML": 0.7372400000000001ms.
+========== 0.7372400000000001 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 100
+ and method "LA4J": 1.2162900000000003ms.
+========== 1.2162900000000003 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 100
+ and method "Apache Commons": 1.1689ms.
+========== 1.1689 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 200
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 200
+ and method "ND4J": 0.40353000000000006ms.
+========== 0.40353000000000006 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 200
+ and method "EJML": 5.60605ms.
+========== 5.60605 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 200
+ and method "LA4J": 7.42692ms.
+========== 7.42692 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 200
+ and method "Apache Commons": 5.73791ms.
+========== 5.73791 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 300
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 300
+ and method "ND4J": 0.5171399999999999ms.
+========== 0.5171399999999999 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 300
+ and method "EJML": 5.675989999999999ms.
+========== 5.675989999999999 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 300
+ and method "LA4J": 25.34212ms.
+========== 25.34212 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 300
+ and method "Apache Commons": 19.635579999999997ms.
+========== 19.635579999999997 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 400
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 400
+ and method "ND4J": 0.8216199999999999ms.
+========== 0.8216199999999999 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 400
+ and method "EJML": 11.86628ms.
+========== 11.86628 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 400
+ and method "LA4J": 63.710019999999986ms.
+========== 63.710019999999986 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 400
+ and method "Apache Commons": 45.95119000000001ms.
+========== 45.95119000000001 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 500
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 500
+ and method "ND4J": 1.23731ms.
+========== 1.23731 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 500
+ and method "EJML": 22.189670000000003ms.
+========== 22.189670000000003 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 500
+ and method "LA4J": 120.60092ms.
+========== 120.60092 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 500
+ and method "Apache Commons": 92.18137ms.
+========== 92.18137 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 600
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 600
+ and method "ND4J": 1.4928900000000003ms.
+========== 1.4928900000000003 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 600
+ and method "EJML": 39.06492999999999ms.
+========== 39.06492999999999 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 600
+ and method "LA4J": 207.67108000000002ms.
+========== 207.67108000000002 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 600
+ and method "Apache Commons": 157.03764999999999ms.
+========== 157.03764999999999 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 700
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 700
+ and method "ND4J": 1.9072500000000001ms.
+========== 1.9072500000000001 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 700
+ and method "EJML": 61.41336ms.
+========== 61.41336 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 700
+ and method "LA4J": 329.00507000000005ms.
+========== 329.00507000000005 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 700
+ and method "Apache Commons": 245.29851999999997ms.
+========== 245.29851999999997 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 800
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 800
+ and method "ND4J": 2.37791ms.
+========== 2.37791 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 800
+ and method "EJML": 89.46251ms.
+========== 89.46251 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 800
+ and method "LA4J": 493.9274300000001ms.
+========== 493.9274300000001 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 800
+ and method "Apache Commons": 373.87589ms.
+========== 373.87589 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 900
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 900
+ and method "ND4J": 2.87357ms.
+========== 2.87357 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 900
+ and method "EJML": 135.67086999999998ms.
+========== 135.67086999999998 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 900
+ and method "LA4J": 704.35885ms.
+========== 704.35885 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 900
+ and method "Apache Commons": 529.34271ms.
+========== 529.34271 ==========
+
+===============================================================
+
+RUNNING BENCHMARKS FOR MATRICES OF SIZE: 1000
+
+Start testing with method: ND4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 1000
+ and method "ND4J": 3.4548900000000002ms.
+========== 3.4548900000000002 ==========
+
+Start testing with method: EJML
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 1000
+ and method "EJML": 179.44513ms.
+========== 179.44513 ==========
+
+Start testing with method: LA4J
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 1000
+ and method "LA4J": 1017.9936600000001ms.
+========== 1017.9936600000001 ==========
+
+Start testing with method: Apache Commons
+Running 5 warmups .....
+Benchmarking for 10 rounds
+..... .....
+Average time taken per matrix with matrix size: 1000
+ and method "Apache Commons": 727.48182ms.
+========== 727.48182 ==========
+
+===============================================================
+
+
+BUILD SUCCESSFUL in 1m 41s
+2 actionable tasks: 2 executed
+00:54:28: Execution finished 'run'.

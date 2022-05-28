@@ -8,9 +8,11 @@ public class Runner {
         double start, end, millisecondsSum;
         String method;
 
-        int warmupRounds = 1;
-        int testRounds = 1;
-        int[] matrixSizes = {1000, 2000, 5000, 10000, 20000, 50000, 100000, 1000000};
+        int warmupRounds = 5;
+        int testRounds = 10;
+
+        int[] matrixSizes = {10, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000,
+                2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000};
 
 
 
@@ -19,7 +21,6 @@ public class Runner {
         benchmarksList.add(new BenchmarkEJML());
         benchmarksList.add(new BenchmarkLA4J());
         benchmarksList.add(new BenchmarkApacheCommons());
-        benchmarksList.add(new BenchmarkColt());
 
         for (int matrixSize: matrixSizes) {
             ArrayFactory arrayFactory = new ArrayFactory(matrixSize);
